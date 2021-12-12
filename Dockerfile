@@ -51,7 +51,7 @@ RUN curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVE
 RUN dpkg -i ./code-server_${CODE_SERVER_VERSION}_${ARCH}.deb && rm ./code-server_${CODE_SERVER_VERSION}_${ARCH}.deb
 COPY ./entrypoint.sh /usr/bin/entrypoint.sh
 
-# Install 
+# Install jupyterlab & notebook 
 RUN pip install notebook
 RUN pip install jupyterlab
 RUN pip install voila 
