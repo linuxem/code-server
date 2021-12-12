@@ -61,6 +61,9 @@ ENV USER=coder
 ENV HOME=/home/coder
 WORKDIR /projects
 
-CMD cp -r $HOME/.vscode-insiders/extensions/* $HOME/.code-server/extensions/
+
+# https://coder.com/docs/code-server/latest/FAQ#how-do-i-install-an-extension
+
+CMD 'cp -r $HOME/.vscode-insiders/extensions/* $HOME/.code-server/extensions/'
 
 EXPOSE 8443
