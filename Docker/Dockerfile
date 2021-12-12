@@ -51,7 +51,7 @@ RUN curl -fOL https://github.com/cdr/code-server/releases/download/v${CODE_SERVE
 RUN dpkg -i ./code-server_${CODE_SERVER_VERSION}_${ARCH}.deb && rm ./code-server_${CODE_SERVER_VERSION}_${ARCH}.deb
 COPY ./entrypoint.sh /usr/bin/entrypoint.sh
 
-# Install jupyterlab & notebook 
+# Install 
 RUN pip install notebook
 RUN pip install jupyterlab
 RUN pip install voila 
@@ -62,8 +62,5 @@ ENV HOME=/home/coder
 WORKDIR /projects
 
 
-# https://coder.com/docs/code-server/latest/FAQ#how-do-i-install-an-extension
-
-CMD 'cp -r $HOME/.vscode-insiders/extensions/* $HOME/.code-server/extensions/'
-
 EXPOSE 8443
+ENTRYPOINT ["/usr/bin/entrypoint.sh", "--bind-addr", "0.0.0.0:8443", "--cert", "--disable-telemetry", "."]
