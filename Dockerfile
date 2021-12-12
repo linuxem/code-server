@@ -61,5 +61,6 @@ ENV USER=coder
 ENV HOME=/home/coder
 WORKDIR /projects
 
+CMD cp -r $HOME/.vscode-insiders/extensions/* $HOME/.code-server/extensions/
 
 EXPOSE 8443
