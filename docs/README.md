@@ -75,3 +75,7 @@ positions](https://coder.com/careers#openings)!
 
 Want remote development for your organization or enterprise? Visit [our
 website](https://coder.com) to learn more about Coder.
+
+
+# Build Docker image 
+docker build -f Dockerfile -t pytorch-code-server:v$VERSION
